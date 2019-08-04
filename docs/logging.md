@@ -1,4 +1,4 @@
-# Convey.Logging
+# Logging
 Adds the logging capability, by default uses [Serilog](https://serilog.net) for logging with 3 optional extensions (sinks):
 
 * Console
@@ -15,6 +15,10 @@ Adds the logging capability, by default uses [Serilog](https://serilog.net) for 
 ## Overview
 
 Extend `Program.cs` -> `CreateDefaultBuilder()` with `UseLogging()` that will add the required services and configure `ILogger` available in ASP.NET Core framework.
+
+## Usage
+
+Simply inject `ILogger<T>` to write the logs.
 
 ### Options:
 * `applicationName` - sets the application name property used for log [enrichment](https://github.com/serilog/serilog/wiki/Enrichment) (optional).
