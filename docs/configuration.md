@@ -17,7 +17,6 @@ public static IWebHostBuilder GetWebHostBuilder(string[] args)
     => WebHost.CreateDefaultBuilder(args)
         .ConfigureServices(services => services.AddConvey().Build())
         .UseVault();
-    }
 ```
 
 ## Options
