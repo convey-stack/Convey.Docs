@@ -23,7 +23,7 @@ public static IWebHostBuilder GetWebHostBuilder(string[] args)
         .UseLogging();
 ```
 
-Then, simply inject `ILogger<T>` (being ASP.NET Core build-in abstraction) to write the logs.
+Then, simply inject `ILogger<T>` (being ASP.NET Core built-in abstraction) to write the logs.
 
 ```csharp
 public class SomeService
