@@ -12,7 +12,7 @@ In order to find out how you can **use Convey in a real-world scenarios,** take 
 
 And if you're looking for the resources about building microservices with .NET Core, **check out our free course** available on YouTube (almost 20 hours) titled [Distributed .NET Core](https://devmentors.io/distributed-net-core).
 
-Eventually, feel free to take a look at our other projects that you might find useful when building the distributed services:
+Feel free to take a look at **our other projects** that you might find useful when building the distributed services:
 
-* **[Chronicle](https://github.com/chronicle-stack/chronicle)** - a simple process manager/saga pattern implementation for .NET Core that helps you manage long-living and disitrbuted transactions.
+* **[Chronicle](https://github.com/chronicle-stack/chronicle)** - a simple process manager/saga pattern implementation for .NET Core that helps you manage long-living and distributed transactions.
 * **[Ntrada](https://github.com/Ntrada/Ntrada)** - API Gateway built with .NET Core, that can be easily configured with yaml files and doesn't require additional coding whatsoever.
