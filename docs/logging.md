@@ -18,9 +18,9 @@ Extend `Program.cs` -> `CreateDefaultBuilder()` with `UseLogging()` that will ad
 
 ## Usage
 
-Simply inject `ILogger<T>` to write the logs.
+Simply inject `ILogger<T>` (being ASP.NET Core build-in abstraction) to write the logs.
 
-### Options:
+## Options
 * `applicationName` - sets the application name property used for log [enrichment](https://github.com/serilog/serilog/wiki/Enrichment) (optional).
 
 ```csharp
