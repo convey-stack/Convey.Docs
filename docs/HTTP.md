@@ -168,6 +168,6 @@ public static IConveyBuilder RegisterConvey(this IConveyBuilder builder)
 "fabio": {
   "enabled": true,
   "url": "http://localhost:9999",
-  "service": "availability-service"
+  "service": "some-service"
 }
 ```
