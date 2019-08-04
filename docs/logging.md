@@ -1,8 +1,8 @@
 # Convey.Logging
 Adds the logging capability, by default uses [Serilog](https://serilog.net) for logging with 3 optional extensions (sinks):
-* Console
-* File
-* [Seq](https://datalust.co/seq)
++ Console
++ File
++ [Seq](https://datalust.co/seq)
 
 ## Installation
 `dotnet add package Convey.Logging`
