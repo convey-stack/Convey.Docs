@@ -1,2 +1,2 @@
 # Convey.Docs
-Docs fro Convey
+Docs for Convey
