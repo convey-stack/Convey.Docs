@@ -9,7 +9,7 @@ Integrates application with [Jaeger](https://www.jaegertracing.io/) (end-to-end 
 * [Convey](https://www.nuget.org/packages/Convey)
 
 ## Open Tracing
-Convey does not generates any default spans for your ASP.NET Core applications. However, this can be simply acheived by plugginig in [Open Tracing](https://opentracing.io/):
+Convey does not generate any default spans for your ASP.NET Core applications. However, this can be simply achieved by plugging in [Open Tracing](https://opentracing.io/):
 
 ### Installation
 `dotnet add package OpenTracing`
@@ -25,7 +25,7 @@ public void ConfigureServices(this IServiceCollection services)
 ```
 
 ## Jaeger
-Once you application produces spans needed for Jaeger, you need to enable reporting in a way that suits you the most.
+Once your application produces spans needed for Jaeger, you need to enable reporting in a way that suits you the most.
 
 ### Options
 * ``enabled`` - determines whether reporting is enabled
