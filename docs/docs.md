@@ -11,11 +11,11 @@ Adds API documentation using [Swagger](https://swagger.io/docs/) or [ReDoc](http
 
 ## Options
 * `Enabled` - determines whether documentation is enabled
-* `ReDocEnabled` - if ``false`` SwaggerUI is used to render documentation. Othwise uses ReDoc
+* `ReDocEnabled` - if ``false`` SwaggerUI is used to render documentation. Otherwise uses ReDoc
 * `Name` - name of the documentation
 * `Title` - title of the documentation
 * `Version` - version of the documentation
-* `RoutePrefix` - endpoint at which the documenation is going to be available
+* `RoutePrefix` - endpoint at which the documentation is going to be available
 * `IncludeSecurity` - determines whether documentation security (via JWT) is going to be activated 
 
 ## appsettings.json
