@@ -43,7 +43,7 @@ public static IWebHostBuilder GetWebHostBuilder(string[] args)
 
 **Beware** that storing the secret token or other type of credentials used while authenticating to Vault during an application startup in `appsettings.json` file **is not really secure**. Instead, you should **set these values by using e.g. environment variables** when deploying your services to the server/cloud - such scenario can be done in a numerous ways, either by CI/CD tools or even with the usage of manual deployment.
 
-Each setting within the `appsettings.json` file can be [overriden](https://docs.microsoft.com/pl-pl/aspnet/core/fundamentals/configuration/?view=aspnetcore-2.2) with a proper environment variable. You can also override Vault settings with the following (custom) environment variables:
+Each setting within the `appsettings.json` file can be [overriden](https://docs.microsoft.com/pl-pl/aspnet/core/fundamentals/configuration) with a proper environment variable. You can also override Vault settings with the following (custom) environment variables:
 
 * VAULT_URL
 * VAULT_KEY
