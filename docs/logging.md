@@ -43,12 +43,25 @@ public class SomeService
 ```
 
 ## Options
-* `applicationName` - sets the application name property used for log [enrichment](https://github.com/serilog/serilog/wiki/Enrichment) (optional).
+* `applicationName` - sets the optional application name property used for log [enrichment](https://github.com/serilog/serilog/wiki/Enrichment).
+* `serviceId` - sets the optional service id property used for log [enrichment](https://github.com/serilog/serilog/wiki/Enrichment).
+* `excludePaths` - optional endpoints that should be excluded from logging (e.g. while performing the health checks by other services).
+* `console.enabled` - enables/disables console logger.
+* `file.enabled` - enables/disables file logger.
+* `file.path` - path to the file logs.
+* `file.interval` - how often should the new file with logs be created.
+* `seq.enabled` - enables/disables [Seq](https://datalust.co/seq) logger.
+* `seq.url` - URL to Seq API.
+* `seq.token` - API key (if provided) used while sending logs to Seq.
+
 
 ### appsettings.json
 
 ```js
 "logger": {
+  "applicationName": "some-service",
+  "serviceId": "instance-1",
+  "excludePaths": ["/ping", "/metrics"],
   "console": {
     "enabled": true
   },
@@ -61,7 +74,6 @@ public class SomeService
     "enabled": true,
     "url": "http://localhost:5341",
     "token": "secret"
-  },
-  "excludePaths": ["/ping", "/metrics"]
+  }
 }
 ```
