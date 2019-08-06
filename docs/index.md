@@ -16,3 +16,28 @@ Feel free to take a look at **our other projects** that you might find useful wh
 
 * **[Chronicle](https://github.com/chronicle-stack/chronicle)** - a simple process manager/saga pattern implementation for .NET Core that helps you manage long-living and distributed transactions.
 * **[Ntrada](https://github.com/Ntrada/Ntrada)** - API Gateway built with .NET Core, that can be easily configured with yaml files and doesn't require additional coding whatsoever.
+
+## Getting started
+
+In order to get started with Convey, simply install the core package:
+
+`dotnet add package Convey`
+
+Its sole responsibility is to expose `IConveyBuilder` being used by other packages, which provides fluent API experience, similar to built-in ASP.NET Core `IServiceCollection` and `IApplicationBuilder` abstractions.
+
+```csharp
+public class Program
+{
+    public static async Task Main(string[] args)
+        => await WebHost.CreateDefaultBuilder(args)
+            .ConfigureServices(services => services.AddConvey().Build())
+            .Configure(app =>
+            {
+                //Configure the middleware"
+            })
+            .Build()
+            .RunAsync();
+}
+```
+
+Whether you're using just a `Program.cs` file (yes, **you can build your web applications and microservices without a need of having `Startup` class and `AddMvc()` along with full `UseMvc()` middleware**) or doing it with a `Startup.cs` included, just invoke `AddConvey()` on `IServiceCollection` instance within the `ConfigureServices()` method and start using Convey packages.
