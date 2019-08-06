@@ -32,7 +32,7 @@ Adds API documentation using [Swagger](https://swagger.io/docs/) or [ReDoc](http
 ```
 
 ## Usage
-Inside your ``Startup.cs`` extend ``IConveyBuilder`` with ``AddSwaggerDocs()`` and ``IApplicationBuilder`` with ``UseSwaggerDocs()``:
+Inside ``Startup.cs`` extend ``IConveyBuilder`` with ``AddSwaggerDocs()`` and ``IApplicationBuilder`` with ``UseSwaggerDocs()``:
 
 ```csharp
 public IServiceProvider ConfigureServices(this IServiceCollection services)
