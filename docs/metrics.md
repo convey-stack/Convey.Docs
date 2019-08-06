@@ -1,10 +1,10 @@
 ## Overview
 Adds capability of generating application metrics and exposing them via HTTP endpoint.
 
-## Installation
+### Installation
 `dotnet add package Convey.Metrics.AppMetrics`
 
-## Dependencies
+### Dependencies
 
 * [Convey](https://www.nuget.org/packages/Convey)
 
@@ -32,7 +32,7 @@ Adds capability of generating application metrics and exposing them via HTTP end
   },
 ```
 
-## Usage
+### Usage
 Inside ``Startup.cs`` extend ``IConveyBuilder`` with ``AddMetrics()`` and ``IApplicationBuilder`` with ``UseMetrics()``:
 
 ```csharp
@@ -55,3 +55,30 @@ The above code registers all required services and exposes some default applicat
 
 * `http://host/metrics` - depending on `prometheusEnabled` option, this endpoint exposes metrics that are either formatted using Prometheus data model or using standard, text formater
 * `http://host/metrics-text` - this endpoint exposes metrics that are always formated using standard, text formater
+
+### Creating custom metrics
+Once you finish Convey registration, you can create custom application metrics using [AppMetrics](https://www.app-metrics.io/) library for .NET Core. There are six different metrics types you can use:
+
+* [Gauges](https://www.app-metrics.io/getting-started/metric-types/gauges/)
+* [Counters](https://www.app-metrics.io/getting-started/metric-types/counters/)
+* [Meters](https://www.app-metrics.io/getting-started/metric-types/meters/)
+* [Histograms](https://www.app-metrics.io/getting-started/metric-types/histograms/)
+* [Timers](https://www.app-metrics.io/getting-started/metric-types/timers/)
+* [Apdex](https://www.app-metrics.io/getting-started/metric-types/apdex/)
+
+To create a custom metrics inject ``IMetricsRoot`` into selected class:
+
+```csharp
+public class MetricsRegistry
+{
+    private readonly IMetricsRoot _metricsRoot;
+    private readonly CounterOptions _findDiscountsQueries = new CounterOptions { Name = "find-discount" };
+
+    public MetricsRegistry(IMetricsRoot metricsRoot)
+        => _metricsRoot = metricsRoot;
+    
+    public void IncrementFindDiscountsQuery()
+        => _metricsRoot.Measure.Counter.Increment(_findDiscountsQueries);
+}
+```
+
