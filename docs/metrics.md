@@ -52,5 +52,6 @@ public void Configure(this IApplicationBuilder app)
 }
 ```
 The above code registers all required services and exposes some default application metrics at two HTTP endpoints:
+
 * `http://host/metrics` - depending on `prometheusEnabled` option, this endpoint exposes metrics that are either formatted using Prometheus data model or using standard, text formater
-* * `http://host/metrics-text` - this endpoint exposes metrics that are always formated using standard, text formater
+* `http://host/metrics-text` - this endpoint exposes metrics that are always formated using standard, text formater
