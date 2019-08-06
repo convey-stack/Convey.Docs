@@ -33,11 +33,11 @@ public class Program
             .ConfigureServices(services => services.AddConvey().Build())
             .Configure(app =>
             {
-                //Configure the middleware"
+                //Configure the middleware
             })
             .Build()
             .RunAsync();
 }
 ```
 
-Whether you're using just a `Program.cs` file (yes, **you can build your web applications and microservices without a need of having `Startup` class and `AddMvc()` along with full `UseMvc()` middleware**) or doing it with a `Startup.cs` included, just invoke `AddConvey()` on `IServiceCollection` instance within the `ConfigureServices()` method and start using Convey packages.
+Whether you're using just a `Program.cs` on its own (yes, **you can build your web applications and microservices without a need of having `Startup` class and `AddMvc()` along with full `UseMvc()` middleware**) or doing it with a `Startup.cs` included, just invoke `AddConvey()` on `IServiceCollection` instance within the `ConfigureServices()` method and start using Convey packages.
